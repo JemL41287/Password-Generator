@@ -1,7 +1,8 @@
 # Password-Generator
 
 
-Description
+Description:
+
 This application generates a random password based on user-selected criteria. This app runs in the browser and feature dynamically updated HTML and CSS powered by JavaScript code.
 
 The user will be prompted to choose from the following password criteria:
