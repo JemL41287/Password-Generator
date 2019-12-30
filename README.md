@@ -19,6 +19,7 @@ Lowercase characters
 
 Uppercase characters
 
+
 The application validates user input and ensures that at least one character type is selected.
 
 Once all prompts are answered, the user will be presented with a password matching the answered prompts.
