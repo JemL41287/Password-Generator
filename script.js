@@ -103,28 +103,39 @@ function passwordOptions() {
     alert ("Password must be less than 129 characters");
     return;
   }
-  return length;
-}
 
-function specChar () {
   var specialCharacters = confirm ("Would you like to include special characters?");
-  return specialCharacters;
+  
+
+  var numericCharacters = confirm ("Would you like to include numberic characters?");
+
+
+  var numericCharacters = confirm ("Would you like to include lowercase letters?");
+  
+
+  var numericCharacters = confirm ("Would you like to include uppercase letters?");
+  
+  if (
+  specialCharacters === false &&
+  numericCharacters === false &&
+  lowerCaseCharacters === false &&
+  upperCaseCharacters === false
+  ) {
+  alert ("You must include at least one character type");
+  return;
+  }
+
+ var passwordOptions = {
+   length: length,
+   specialcharacters: specialCharacters,
+   numericCharacters: numericCharacters,
+   lowerCaseCharacters: lowerCaseCharacters,
+   upperCaseCharacters: upperCaseCharacters,
+ };
+
+ return passwordOptions;
 }
 
-function numChar () {
-  var numericCharacters = confirm ("Would you like to include numberic characters?")
-  return numericCharacters;
-}
-
-function lowerCase () {
-  var numericCharacters = confirm ("Would you like to include lowercase letters?")
-  return lowerCaseCharacters;
-}
-
-function upperCase () {
-  var numericCharacters = confirm ("Would you like to include uppercase letters?")
-  return upperCaseCharacters;
-}
 
 
 
