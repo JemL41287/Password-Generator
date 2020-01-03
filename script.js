@@ -103,7 +103,29 @@ function passwordOptions() {
     alert ("Password must be less than 129 characters");
     return;
   }
+  return length;
 }
+
+function specChar () {
+  var specialCharacters = confirm ("Would you like to include special characters?");
+  return specialCharacters;
+}
+
+function numChar () {
+  var numericCharacters = confirm ("Would you like to include numberic characters?")
+  return numericCharacters;
+}
+
+function lowerCase () {
+  var numericCharacters = confirm ("Would you like to include lowercase letters?")
+  return lowerCaseCharacters;
+}
+
+function upperCase () {
+  var numericCharacters = confirm ("Would you like to include uppercase letters?")
+  return upperCaseCharacters;
+}
+
 
 
 
@@ -113,6 +135,27 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  console.log ("write password")
+  var length = passwordOptions ()
+  console.log (length)
+  var specialChar = specChar ()
+  console.log (specialCharacters)
+  var lowercase = lowerCase ()
+  console.log (lowerCaseCharacters)
+  var uppercase = upperCase ()
+  console.log (upperCaseCharacters)
+
+for (var i = 0; i < length; i++) {
+  console.log (i)
+  if (specialChar === true) {
+  console.log ("Special character chosen")
+
+  }
+}
+
+
+
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
