@@ -136,39 +136,61 @@ function passwordOptions() {
  return passwordOptions;
 }
 
-
-
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-
-// Write password to the #password input
-function writePassword() {
-  console.log ("write password")
-  var length = passwordOptions ()
-  console.log (length)
-  var specialChar = specChar ()
-  console.log (specialCharacters)
-  var lowercase = lowerCase ()
-  console.log (lowerCaseCharacters)
-  var uppercase = upperCase ()
-  console.log (upperCaseCharacters)
-
-for (var i = 0; i < length; i++) {
-  console.log (i)
-  if (specialChar === true) {
-  console.log ("Special character chosen")
-
-  }
+function getRandom(arr) {
+  let randomIndex = Math.floor(Math.random()*arr.length);
+  let randomElement = arr[randomIndex];
+  return randomElement;
 }
 
 
+function generatePassword () {
+  var options = getPassworldOptions ();
+  var result = [];
+
+  var possibleCharacters = [];
+
+  var chosenCharacters = [];
+
+  if (options.specialCharacters) {
+    possibleCharacters = possibleCharacters.concat(specialCharacters);
+    chosenCharacters.push(getRandom(specialCharacters));
+  }
+
+  if (options.numericCharacters) {
+    possibleCharacters = possibleCharacters.concat(numericCharacters);
+    chosenCharacters.push(getRandom(numericCharacters));
+  }
+
+  if (options.lowerCaseCharacters) {
+    possibleCharacters = possibleCharacters.concat(lowerCaseCharacters);
+    chosenCharacters.push(getRandom(lowerCaseCharacters));
+  }
+
+  if (options.upperCaseCharacters) {
+    possibleCharacters = possibleCharacters.concat(upperCaseCharacters);
+    chosenCharacters.push(getRandom(upperCaseCharacters));
+  }
+
+  for (var i = 0; i < options.length; i++) {
+    var possibleCharacter = getRandom(possibleCharacters);
+
+    result.push(possibleCharacter);
+  }
+
+  for (var i = 0; i < chosenCharacters.length; i++) {
+    result[i] = chosenCharacters[i];
+  }
+
+  return result.join("");
+}
+
+var copyBtn = document.querySelector("#copy");
+var generateBtn = document.querySelector("#generate");
 
 
+function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passworldText = document.querySelector("#password");
 
   passwordText.value = password;
 
@@ -177,10 +199,16 @@ for (var i = 0; i < length; i++) {
 }
 
 function copyToClipboard() {
-  // BONUS 
+  var passwordText = document.querySelector("#password");
+
+  passwordText.querySelector();
+  document.execCommand("copy");
+
+  alert("Your Password" + passwordText.value + "was copied to your clipboard.");
+
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyToClipboard);
 
-// BONUS EVENT LISTENER
+
