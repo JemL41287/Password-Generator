@@ -163,12 +163,12 @@ function generatePassword () {
     chosenCharacters.push(getRandom(numericCharacters));
   }
 
-  if (options.containtsLowerCaseCharacters) {
+  if (options.containsLowerCaseCharacters) {
     possibleCharacters = possibleCharacters.concat(lowerCaseCharacters);
     chosenCharacters.push(getRandom(lowerCaseCharacters));
   }
 
-  if (options.containtsUpperCaseCharacters) {
+  if (options.containsUpperCaseCharacters) {
     possibleCharacters = possibleCharacters.concat(upperCaseCharacters);
     chosenCharacters.push(getRandom(upperCaseCharacters));
   }
@@ -203,10 +203,10 @@ function writePassword() {
 function copyToClipboard() {
   var passwordText = document.querySelector("#password");
 
-  passwordText.querySelector();
+  passwordText.select();
   document.execCommand("copy");
 
-  alert("Your Password" + passwordText.value + "was copied to your clipboard.");
+  alert("Your Password " + passwordText.value + " was copied to your clipboard.");
 
 }
 
