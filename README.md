@@ -1,27 +1,35 @@
 # Password-Generator
 
-
-Description:
-
-This application generates a random password based on user-selected criteria. This app runs in the browser and feature dynamically updated HTML and CSS powered by JavaScript code.
-
-The user will be prompted to choose from the following password criteria:
-
-Length (must be between 8 and 128 characters)
-
-Character type:
-
-Special characters
-
-Numeric characters
-
-Lowercase characters
-
-Uppercase characters
+Created during Week 3 of DU Coding Bootcamp
 
 
-The application validates user input and ensures that at least one character type is selected.
+## Overview:
 
-Once all prompts are answered, the user will be presented with a password matching the answered prompts.
+This application generates a random password based on user-selected criteria. Users will be prompted to choose a desired length and types of characters to include in the password. Characters in the password will then be randomly chosen based on user selection and desired length.
 
-The user has the option to click the copy button to copy the password to their clipboard.
+## Utilizing the App
+
+- View the app: [Here](https://jeml41287.github.io/Password-Generator/ "Here")
+
+- To start, click on "Generate Password" button
+
+- User will answer prompts as desired
+    - User must select a number between 8-128 characters.
+    - User must confirm at least one of the valid inputs (special, numeric, upper & lower case letters) to continue.
+
+- After password is generated, user can copy password to clipboard by clicking the "Copy to Clipboard" button.
+
+## Demo
+
+![Password Generator Image](assets/password_generator.png "Password Generator")
+
+## Tech Used
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+
+## Contributers
+
+- Jennifer Mullin
